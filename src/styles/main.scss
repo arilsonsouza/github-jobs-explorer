@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 @import "normalize.scss";
 @import "reset.scss";
@@ -6,14 +7,92 @@
 
 html,
 body {
-    background-color: $bg-color;
+    background-color: $white;
     font-size: $font-base;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.container {
+
+// FLEX
+.flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+// PADDINGS
+.px-1 {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.py-1 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+// WIDTH & HEIGHT
+.w-full {
     width: 100%;
-    max-width: 1201px;
-    margin: 0 auto;
-    padding: 0 1em;
+}
+
+.h-full {
+    height: 100%;
+}
+
+
+// BUTTON
+.btn {
+    background-color: $btn-primary;
+    border-radius: 4px;
+    border: none;
+    color: $white;
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5em;
+    line-height: 14px;
+    text-align: center;
+    height: 100%;
+    cursor: pointer;
+    outline: none;
+
+    &:focus,
+    &:active,
+    &:hover {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.container {
+    width: 1201px;
+    max-width: 100%;
+    margin: 0 auto;    
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
 }

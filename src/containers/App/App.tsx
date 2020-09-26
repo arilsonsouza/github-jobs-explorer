@@ -10,10 +10,12 @@ import { Navbar } from '../../components';
 const App = () => (
     <Provider store={store}>
         <div className='app container'>
-            <Navbar/>
-            <Router>
-                <Routes/>
-            </Router>
+            <div className='px-1'>
+                <Navbar/>
+                <Router>
+                    <Routes/>
+                </Router>
+            </div>
         </div>
     </Provider>
 );

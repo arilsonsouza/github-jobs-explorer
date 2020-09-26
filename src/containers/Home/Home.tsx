@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { Searchbar } from '../../components';
+
 const Home = () => (
-    <>
-        <h1>Github Jobs Explorer</h1>
-    </>
+    <div className='home'>
+        <Searchbar/>
+    </div>
 );
 
 export default Home
