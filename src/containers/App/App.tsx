@@ -5,9 +5,12 @@ import { Provider } from 'react-redux';
 import Routes from '../../routes';
 import store from '../../store';
 
+import { Navbar } from '../../components';
+
 const App = () => (
     <Provider store={store}>
-        <div className='app'>
+        <div className='app container'>
+            <Navbar/>
             <Router>
                 <Routes/>
             </Router>

@@ -1,0 +1,18 @@
+.header {
+    height: 36px;
+    width: 100%;
+    padding-top: 1em;
+    .navbar {
+        width: 100%;
+        .navbar_brand {
+            font-family: Poppins, sans-serif;
+            font-style: normal;
+            font-size: 1.8em;
+            line-height: 36px;
+            color: #282538;
+            b {
+                font-weight: bold;
+            }
+        }
+    }
+}
