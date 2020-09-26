@@ -1,0 +1,14 @@
+@import "../../styles/variables.scss";
+
+.input_label{
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.7em;
+    line-height: 21px;
+    color: $primary-color;
+
+    input {
+        margin-right: 1em;
+    }
+}

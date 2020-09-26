@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.location_wrapper {
+    .location_item {
+        &:not(:first-child) {
+            margin-top: 16px;
+        }
+    }
+
+    .location_input {
+        margin: 3em 0;
+
+        span {
+            font-family: Poppins, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.5em;
+            line-height: 21px;
+            text-transform: uppercase;
+            color: $light-gray;            
+        }
+
+        div {
+            margin: 1em 0 1em 0;            
+        }
+    }
+
+    .location_list {
+
+    }
+
+}
