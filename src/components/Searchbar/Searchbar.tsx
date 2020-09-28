@@ -9,6 +9,7 @@ const Searchbar = ({ handleSubmit }: { handleSubmit(query: string): void }) => {
     const onSubmit = (evt:  React.FormEvent<HTMLFormElement>): void => {
         evt.preventDefault();
         handleSubmit(searchQuery);
+        setSearchQuery('');
     };
 
     return (

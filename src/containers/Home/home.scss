@@ -1,10 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import "../../styles/variables.scss";
 .home {    
     .filter_wrapper {
         width: 380px;
     }
 
-    .jobs {
+    .jobs,
+    .no-results-found {
         flex: 1;
+    }
+
+    .no-results-found {
+        font: 600 1.8rem Montserrat,sans-serif;
+        color: $light-gray;
+        .sad-face {
+            font-size: 3rem;
+            margin-bottom: 1rem;        
+        }
     }
 
     @media (max-width: 768px) {
