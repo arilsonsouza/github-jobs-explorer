@@ -1,0 +1,247 @@
+@import "../../styles/variables.scss";
+
+.sidebar {
+    width: 100%;       
+    font-family: Poppins, sans-serif;
+    
+    .go-back {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        color: $light-blue;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4em;
+        line-height: 21px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: none;
+            outline: none;
+        }
+
+        i {
+            transform: rotate(180deg);
+            margin-right: .5em;
+            color: $light-blue;
+        }
+    }
+
+    .how_to_apply {
+        h5 {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.2em;
+            line-height: 21px;
+            text-transform: uppercase;
+            color: $light-gray;
+            margin: 2em 0;
+        }
+        div > * {
+            margin-bottom: 1em;
+        }
+        
+        font: 500 1.2em Roboto, sans-serif;
+        color: $dark-blue;
+        line-height: 1.5em;
+
+        a {
+            color: $light-blue;
+            word-break: break-word;
+            text-decoration: none;
+        }
+    }
+}
+
+.job_container {
+    width: 100%;
+
+    font-family: Roboto, sans-serif; 
+    font-style: normal;
+
+    .job_title {
+        color: $dark-blue;
+        margin-bottom: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        h1 {
+            font-weight: bold;
+            font-size: 1.4em;
+            line-height: 21px;
+        }
+
+        span {
+            border: 1px solid $dark-blue;
+            box-sizing: border-box;
+            border-radius: 4px;        
+            font-weight: 700;
+            padding: .5em;
+        }
+    }
+
+    .job_create_at {
+        font-weight: 500;
+        font-size: 1em;
+        line-height: 14px;
+        color: $light-gray;
+
+        i {
+            font-size: 1em;
+        }
+    }
+
+    .job_company_info {
+        margin-top: 2em;
+
+        img {
+            height: 60px;
+            width: 60px;
+            border-radius: 4px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .job_company_details {
+            padding: .5em;
+            .job_company_name {
+                font-weight: bold;
+                font-size: 1.4em;
+                line-height: 21px;
+                color: $dark-blue;
+            }
+
+            .job_company_location {
+                font-weight: 500;
+                font-size: 1.2em;
+                line-height: 14px;
+                color: $light-gray;
+                i {
+                    margin-right: .5em;
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+
+    .job_description {
+        margin-top: 2em;
+        font: 400 1.5em Roboto,sans-serif;
+        color: #334680;
+        line-height: 2.1rem;
+
+        a {
+            color: $light-blue;
+            text-decoration: none;
+        }
+        > *{
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: disc;
+            li {
+                margin-left: 3em;
+                margin-bottom: 1em;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        width: 380px;       
+    }
+
+    .job_container {
+        width: 100%;
+        padding: 0 2em;
+        font-family: Roboto, sans-serif; 
+        font-style: normal;
+    
+        .job_title {
+            color: $dark-blue;
+            margin-bottom: 1em;
+            h1 {
+                font-weight: bold;
+                font-size: 2.4em;
+                line-height: 28px;
+            }
+    
+            span {
+                border: 1px solid $dark-blue;
+                box-sizing: border-box;
+                border-radius: 4px;
+                margin-left: 1.6em;
+                font-weight: 700;
+                padding: 0 1em;
+            }
+        }
+    
+        .job_create_at {
+            font-weight: 500;
+            font-size: 1em;
+            line-height: 14px;
+            color: $light-gray;
+    
+            i {
+                font-size: 1em;
+            }
+        }
+    
+        .job_company_info {
+            margin-top: 5em;
+    
+            img {
+                height: 60px;
+                width: 60px;
+                border-radius: 4px;
+                object-fit: contain;
+                display: block;
+            }
+    
+            .job_company_details {
+                padding: .5em;
+                .job_company_name {
+                    font-weight: bold;
+                    font-size: 1.3em;
+                    line-height: 21px;
+                    color: $dark-blue;
+                }
+    
+                .job_company_location {
+                    font-weight: 500;
+                    font-size: 1em;
+                    line-height: 14px;
+                    color: $light-gray;
+                    i {
+                        margin-right: .5em;
+                        font-size: 1.5em;
+                    }
+                }
+            }
+        }
+    
+        .job_description {
+            margin-top: 2em;
+            font: 400 1.5em Roboto,sans-serif;
+            color: #334680;
+            line-height: 2.1rem;
+    
+            > *{
+                margin-bottom: 1em;
+            }
+    
+            ul {
+                list-style: disc;
+                li {
+                    margin-left: 3em;
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+}

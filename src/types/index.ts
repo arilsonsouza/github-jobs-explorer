@@ -11,7 +11,7 @@ export interface jobProperties {
     title: string,
     description: string,
     how_to_apply: string,
-    company_logo: string|null
+    company_logo?: string
 }
 
 export interface apiParams {
@@ -41,4 +41,15 @@ export interface filterInitialState {
     isFullTime: boolean,
     selectedLocation?: string,
     locations: string[]
+}
+
+export interface paramsProperties {
+    id: any
+}
+
+export interface matchProperties {
+    path: string,
+    url: string,
+    isExact: boolean,
+    params: paramsProperties,
 }
