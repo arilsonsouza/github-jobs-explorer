@@ -10,7 +10,8 @@ export interface jobProperties {
     location: string,
     title: string,
     description: string,
-    company_logo: string
+    how_to_apply: string,
+    company_logo: string|null
 }
 
 export interface apiParams {

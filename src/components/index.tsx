@@ -5,6 +5,7 @@ import JobCard from './JobCard/JobCard';
 import Filters from './Filters/Filters';
 import JobsList from './JobsList/JobsList';
 import Searchbar from './Searchbar/Searchbar';
+import Pagination from './Pagination/Pagination';
 
 export {
     Input,
@@ -13,5 +14,6 @@ export {
     JobCard,
     Filters,
     JobsList,
-    Searchbar
+    Searchbar,
+    Pagination
 }

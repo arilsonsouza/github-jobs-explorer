@@ -37,7 +37,7 @@ const JobCard = ({ job }: { job: jobProperties}) => {
 
                 <div className="job_details flex justify-between">
                     <span className='job_type flex align-center'>{type}</span>
-                    <div className="job_infos_container flex align-center justify-between">
+                    <div className="job_infos_container flex justify-between">
                         <span className='job_info flex align-center'>
                             <i className="material-icons md-dark md-inactive">public</i> <span className='job_info_location'>{location}</span>
                         </span>

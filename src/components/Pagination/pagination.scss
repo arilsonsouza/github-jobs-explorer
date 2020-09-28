@@ -1,0 +1,69 @@
+@import "../../styles/variables.scss";
+
+@mixin pagination_item {
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 14px;
+    color: $light-gray;
+}
+
+.pagination {
+    margin: 2em 0;
+
+    .pagination_item {   
+        @include pagination_item();    
+        cursor: pointer;        
+        border: 1px solid $light-gray;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        &:hover {
+            border-color: $light-blue;
+            color: $light-blue;
+
+            i {
+                color: $light-blue;
+            }
+        }
+
+        &:not(:first-child){
+            margin-left: .5em;
+        }
+
+        &--ellipsis {
+           @include pagination_item();
+           margin-left: .5em;
+        }
+
+        &--current {
+            background-color: $light-blue;
+            color: $white;
+            border: none;
+            cursor: not-allowed;
+
+            &:hover {
+                background-color: $light-blue;
+                color: $white;
+                border: none;
+            }
+        }
+        
+        &--disabled {
+            cursor: not-allowed;
+            &:hover{
+                border-color: $light-gray;
+                i {
+                    color: $light-gray;
+                }
+            }
+        }
+       
+    }
+}
