@@ -8,59 +8,59 @@ const Pagination = (
         {currentPage: any, collectionLength: number, paginationRange: number, rowsPerPage: number, handleChange(page: string | number): void}) => {
         
     const [pages, setPages] = useState<(string|number)[]>([]);    
-
-    const generatePagesArray = (): (string|number)[] => {        
-        const pagesArray: (string | number)[] = [];
-        const totalPages = Math.ceil(collectionLength / rowsPerPage);
-        const halfWay = Math.ceil(paginationRange / 2);
-        let position;
-
-        if (currentPage <= halfWay) {
-            position = 'start';
-        } else if (totalPages - halfWay < currentPage) {
-            position = 'end';
-        } else {
-            position = 'middle';
-        }
-
-        var ellipsesNeeded = paginationRange < totalPages;
-        var i = 1;
-        while (i <= totalPages && i <= paginationRange) {
-            var pageNumber = calculatePageNumber(i, totalPages);
-            var openingEllipsesNeeded = (i === 2 && (position === 'middle' || position === 'end'));
-            var closingEllipsesNeeded = (i === paginationRange - 1 && (position === 'middle' || position === 'start'));
-            if (ellipsesNeeded && (openingEllipsesNeeded || closingEllipsesNeeded)) {
-                pagesArray.push('...');
-            } else {
-                pagesArray.push(pageNumber);
-            }
-            i++;
-        }
-        return pagesArray;
-    }
-
-    const calculatePageNumber = (i: number, totalPages: number): number => {
-        var halfWay = Math.ceil(paginationRange / 2);
-        if (i === paginationRange) {
-            return totalPages;
-        } else if (i === 1) {
-            return i;
-        } else if (paginationRange < totalPages) {
-            if (totalPages - halfWay < currentPage) {
-                return totalPages - paginationRange + i;
-            } else if (halfWay < currentPage) {
-                return currentPage - halfWay + i;
+   
+    useEffect(() => {
+        const calculatePageNumber = (i: number, totalPages: number): number => {
+            var halfWay = Math.ceil(paginationRange / 2);
+            if (i === paginationRange) {
+                return totalPages;
+            } else if (i === 1) {
+                return i;
+            } else if (paginationRange < totalPages) {
+                if (totalPages - halfWay < currentPage) {
+                    return totalPages - paginationRange + i;
+                } else if (halfWay < currentPage) {
+                    return currentPage - halfWay + i;
+                } else {
+                    return i;
+                }
             } else {
                 return i;
             }
-        } else {
-            return i;
         }
-    }
 
-    useEffect(() => {        
-        setPages(generatePagesArray());
-    }, [currentPage, collectionLength])
+        const generatePagesArray = (): (string|number)[] => {        
+            const pagesArray: (string | number)[] = [];
+            const totalPages = Math.ceil(collectionLength / rowsPerPage);
+            const halfWay = Math.ceil(paginationRange / 2);
+            let position;
+    
+            if (currentPage <= halfWay) {
+                position = 'start';
+            } else if (totalPages - halfWay < currentPage) {
+                position = 'end';
+            } else {
+                position = 'middle';
+            }
+    
+            var ellipsesNeeded = paginationRange < totalPages;
+            var i = 1;
+            while (i <= totalPages && i <= paginationRange) {
+                var pageNumber = calculatePageNumber(i, totalPages);
+                var openingEllipsesNeeded = (i === 2 && (position === 'middle' || position === 'end'));
+                var closingEllipsesNeeded = (i === paginationRange - 1 && (position === 'middle' || position === 'start'));
+                if (ellipsesNeeded && (openingEllipsesNeeded || closingEllipsesNeeded)) {
+                    pagesArray.push('...');
+                } else {
+                    pagesArray.push(pageNumber);
+                }
+                i++;
+            }
+            return pagesArray;
+        }
+        setPages(generatePagesArray());            
+        
+    }, [currentPage, collectionLength, paginationRange, rowsPerPage])
     
     const renderPaginationItem = (page: number | string, index: number) => {
         return (
