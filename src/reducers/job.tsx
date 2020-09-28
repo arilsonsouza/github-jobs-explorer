@@ -661,7 +661,7 @@ const jobReducer = (state: jobInitialState = initialState, action: actionPropert
     const { type, payload } = action;
     switch(type) {
         case jobConstants.SET_JOBS:
-            const jobs = [...state.jobs, ...payload];
+            const jobs = payload;
             state.jobs = jobs;
         break
     }

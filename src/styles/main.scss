@@ -84,6 +84,18 @@ body {
     cursor: pointer;
     outline: none;
 
+    i {
+        color: $white;
+    }
+
+    &--small {
+        font-size: 1em;
+        line-height: 1px;
+        i {
+            font-size: 1.8em;
+        }
+    }
+
     &:focus,
     &:active,
     &:hover {

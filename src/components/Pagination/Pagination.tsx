@@ -11,7 +11,7 @@ const Pagination = (
 
     useEffect(() => {        
         setPages(generatePagesArray());
-    }, [currentPage])
+    }, [currentPage, collectionLength])
 
     const generatePagesArray = (): (string|number)[] => {        
         const pagesArray: (string | number)[] = [];

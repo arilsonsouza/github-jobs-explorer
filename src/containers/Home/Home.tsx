@@ -5,11 +5,13 @@ import { Searchbar, Filters, JobsList, Pagination } from '../../components';
 
 import { JobService } from '../../services/JobService';
 import { setJobs } from '../../actions';
-import { rootState } from '../../types';
+import { rootState, apiParams } from '../../types';
 
 import './home.scss'
 
 const Home = () => {
+    const [params, setParams] = useState<apiParams>({});
+
     const [currentPage, setCurrentPage] = useState<any>(1);
     const [collectionLength, setCollectionLength] = useState(0);
     
@@ -21,27 +23,31 @@ const Home = () => {
 
     const fetchJobs = async () => {
         try {
-            const { data } = await JobService.fetchJobs();
+            const { data } = await JobService.fetchJobs(params);
             dispatch(setJobs(data));            
         } catch (error) {
             
         }
-    };
+    };    
 
     useEffect(() => {
         setCollectionLength(jobs.length);
     }, [jobs]);
 
     useEffect(() => {
-        // fetchJobs();  
-    }, []);
+        fetchJobs();  
+    }, [params]);
 
     return (    
         <div className='home'>
-            <Searchbar/>
+            <Searchbar
+                handleSubmit={description => setParams({...params, description})}
+            />
             <div className='flex flex-wrap py-2'>
                 <div className='filter_wrapper'>
-                    <Filters/>
+                    <Filters
+                        handleFilter={filters =>  setParams({...params, ...filters})} 
+                    />
                 </div>
                 <div className="jobs flex flex-col">
                     <JobsList jobs={jobs.slice((rowsPerPage  * (currentPage - 1)), rowsPerPage * currentPage)}/>

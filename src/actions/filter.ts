@@ -9,3 +9,8 @@ export const setSelectedLocation = (location: string) => ({
     type: filterConstants.SET_SELECTED_LOCATION,
     payload: location
 })
+
+export const updateLocations = (locations: string[]) => ({
+    type: filterConstants.UPDATE_LOCATION,
+    payload: locations
+})

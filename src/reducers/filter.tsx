@@ -5,6 +5,7 @@ import { filterInitialState, actionProperties} from '../types';
 const initialState = {
     isFullTime: true,    
     locations: [
+        'Remote',
         'Amsterdam',
         'Berlin',
         'London',
@@ -19,8 +20,11 @@ const filterReducer = (state: filterInitialState = initialState, action: actionP
             state.isFullTime = payload;
             break
         case filterConstants.SET_SELECTED_LOCATION:
-            state.selectedLocation = payload
-        break
+            state.selectedLocation = payload;
+            break
+        case filterConstants.UPDATE_LOCATION:
+            state.locations = payload;
+            break
         
     }
 
