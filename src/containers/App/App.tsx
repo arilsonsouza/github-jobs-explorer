@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import Routes from '../../routes';
 import store from '../../store';
 
-import { Navbar } from '../../components';
+import { Navbar, Footer } from '../../components';
 
 const App = () => (
     <Provider store={store}>
@@ -14,6 +14,7 @@ const App = () => (
                 <Router>
                     <Navbar/>
                     <Routes/>
+                    <Footer/>
                 </Router>
             </div>
         </div>

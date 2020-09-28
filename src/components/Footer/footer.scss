@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+#footer {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 2em;
+    color: $light-gray;
+    padding: 0 0 2.5em;
+    a {
+        color: $light-gray;
+        text-decoration: none;
+    }
+}
