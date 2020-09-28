@@ -1,5 +1,15 @@
 .home {    
     .filter_wrapper {
-        width: 347px;
+        width: 380px;
+    }
+
+    .jobs {
+        flex: 1;
+    }
+
+    @media (max-width: 768px) {
+        .filter_wrapper {
+            margin-bottom: 1.5em;
+        }
     }
 }

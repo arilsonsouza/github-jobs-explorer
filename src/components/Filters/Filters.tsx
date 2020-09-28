@@ -1,27 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { setIsFullTime, setSelectedLocation } from '../../actions';
 import { Filter, Input } from '../';
+import { rootState } from '../../types';
 
 import './filters.scss';
 
-const locations = [
-    'Amsterdam',
-    'Berlin',
-    'London',
-    'New York',
-];
 
-const Filters = () => {
-    const [fullTime, setFullTime] = useState(true);
-    const [selectedLocation, setSelectedLocation] = useState('');
+const Filters = () => {    
 
-    const handleChange = (evt:  React.FormEvent<HTMLInputElement>): void => {
-        console.log('evt: ', evt.currentTarget.value); 
+    const locations = useSelector((state: rootState) => state.filter.locations);
+    const isFullTime = useSelector((state: rootState) => state.filter.isFullTime);
+    const selectedLocation = useSelector((state: rootState) => state.filter.selectedLocation);
+
+
+    const dispatch = useDispatch();
+
+    const handleChange = (evt:  React.FormEvent<HTMLInputElement>): void => {        
         if (evt.currentTarget.name === 'full-time') {
-            setFullTime(!fullTime);
+            dispatch(setIsFullTime(!isFullTime));
             return;
         }
-        setSelectedLocation(evt.currentTarget.value);
+        dispatch(setSelectedLocation(evt.currentTarget.value));
     };
 
     return (
@@ -30,8 +31,8 @@ const Filters = () => {
                 type='checkbox'
                 name='full-time'
                 label='Full time'
-                value={fullTime}
-                selectedValue={fullTime}
+                value={isFullTime}
+                selectedValue={isFullTime}
                 handleChange={(e) => handleChange(e)}
             />
             <div className="location_wrapper">
@@ -45,7 +46,7 @@ const Filters = () => {
                 </div>
                 
                 <div className="location_list">
-                    {locations.map((location, index) => 
+                    {locations.map((location: string, index: number) => 
                         <div className="location_item" key={index}>
                             <Filter
                                 type='radio'

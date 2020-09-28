@@ -11,8 +11,8 @@ const App = () => (
     <Provider store={store}>
         <div className='app container'>
             <div className='px-1'>
-                <Navbar/>
                 <Router>
+                    <Navbar/>
                     <Routes/>
                 </Router>
             </div>
