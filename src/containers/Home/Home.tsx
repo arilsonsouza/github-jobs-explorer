@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 
 import { Searchbar, Filters, JobsList, Pagination, Loading } from '../../components';
@@ -22,17 +22,16 @@ const Home = () => {
 
     const dispatch = useDispatch();
 
-    const fetchJobs = async () => {
+    const fetchJobs = useCallback(async () =>{
         try {
             setIsLoading(true);
             const { data } = await JobService.fetchJobs(params);
-            dispatch(setJobs(data));            
+            dispatch(setJobs(data));
         } catch (error) {
-            
         } finally {
             setIsLoading(false);
         }
-    };    
+    }, [dispatch, params])
 
     useEffect(() => {
         setCollectionLength(jobs.length);
@@ -40,7 +39,7 @@ const Home = () => {
 
     useEffect(() => {
         fetchJobs();
-    }, [params]);
+    }, [fetchJobs, params]);
 
     const renderJobs = () => (
         collectionLength > 0 ?
