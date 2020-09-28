@@ -7,11 +7,7 @@ const Pagination = (
         {currentPage, collectionLength, paginationRange, rowsPerPage, handleChange}:
         {currentPage: any, collectionLength: number, paginationRange: number, rowsPerPage: number, handleChange(page: string | number): void}) => {
         
-    const [pages, setPages] = useState<(string|number)[]>([]);
-
-    useEffect(() => {        
-        setPages(generatePagesArray());
-    }, [currentPage, collectionLength])
+    const [pages, setPages] = useState<(string|number)[]>([]);    
 
     const generatePagesArray = (): (string|number)[] => {        
         const pagesArray: (string | number)[] = [];
@@ -62,6 +58,10 @@ const Pagination = (
         }
     }
 
+    useEffect(() => {        
+        setPages(generatePagesArray());
+    }, [currentPage, collectionLength])
+    
     const renderPaginationItem = (page: number | string, index: number) => {
         return (
             <li

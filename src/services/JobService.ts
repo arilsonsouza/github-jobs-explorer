@@ -1,6 +1,6 @@
 import Service from './Service';
 
-import { apiParams, jobProperties } from '../types';
+import { apiParams } from '../types';
 
 export class JobService extends Service {
     static fetchJobs(params: apiParams = {}){

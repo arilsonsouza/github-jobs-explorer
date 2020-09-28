@@ -8,9 +8,9 @@ import './job_card.scss';
 
 const JobCard = ({ job }: { job: jobProperties}) => {
     const {
-        id, type, url,
-        created_at, company, company_url,
-        location, title, description,
+        id, type,
+        created_at, company,
+        location, title,
         company_logo
     } = job;
 
