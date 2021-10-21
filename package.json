@@ -17,6 +17,7 @@
     "material-design-icons": "^3.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropzone-uploader": "git+ssh://git@github.com:skilopay/react-dropzone-uploader.git#master",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
@@ -27,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "preinstall": "bash netlify-setup.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
